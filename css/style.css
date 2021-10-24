@@ -1,0 +1,242 @@
+/* colors
+    First Pallete
+    background-color: #EAE7DC; light beige
+    background-color: #D8C3A5; dark beige
+    background-color: #8E8D8A; Grey
+    background-color: #E98074; light Salmon
+    background-color: #E85A4F; dark Salmon
+
+    Second Pallete
+    background-color: #1A1A1D; dark gray
+    background-color: #4E4E50; light gray
+    background-color: #6F2234; barberry
+    background-color: #950740; arghvani
+    background-color: #C3073F; red
+*/
+:root {
+    --dark-gray: #1A1A1D;
+    --light-gray: #4E4E50;
+    --barberry: #6F2234;
+    --arghavani: #950740;
+    --pink: #ff0057;
+    --red: #C3073F;
+    --white: #fff;
+    --light-beige: #EAE7DC;
+    --dark-beige: #D8C3A5;
+}
+
+
+
+/* ---------------------------------------------------- */
+/* Reset default */
+/* ---------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    font-size: 10px;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    position: relative;
+    background-color: var(--dark-beige);
+    z-index: -3;
+}
+
+/* ---------------------------------------------------- */
+/* Heading styles */
+/* ---------------------------------------------------- */
+
+.header {
+    /* background-image: linear-gradient(to right, #ee4034, #E98074); */
+    height: 90vh;
+    /* background-image: linear-gradient(to right, #1a1a1de0, #4e4e50e0), url(../images/code-4.jpeg); */
+    background-color: var(--dark-gray);
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    position: relative;
+    z-index: -1;
+}
+
+.logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+}
+
+.logo {
+    height: 3.5rem;
+}
+
+.heading-container {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 4rem;
+    /* font-weight: 400; */
+    letter-spacing: 2rem;
+    animation-name: FadeInLeft;
+    animation-duration: 1s;
+}
+
+.heading-primary-slogan-first {
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 1.2rem;
+}
+
+.heading-primary-slogan-second {
+    display: block;
+    font-size: .55rem;
+    font-weight: 400;
+    letter-spacing: 1.31rem;
+    animation-name: FadeIn;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+}
+
+.red-text {
+    color: red;
+    font-weight: 900;
+}
+
+/* ---------------------------------------------------- */
+/* Animation */
+/* ---------------------------------------------------- */
+
+@keyframes FadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0rem);
+    }
+}
+
+@keyframes FadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* ---------------------------------------------------- */
+/* Cards */
+/* ---------------------------------------------------- */
+
+section .cards-section {
+    display: flex;
+    justify-content: center;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* background-color: var(--dark-gray); */
+    margin-top: -40rem;
+}
+
+.cards-container .card {
+    /* flex: 1; */
+    /* position:relative; */
+    /* border: 1rem red solid; */
+    cursor: pointer;
+}
+
+.cards-container .card .face{
+    width: 40rem;
+    height: 20rem;
+    transition: 0.5s;
+}
+
+.cards-container .card .face.face1 {
+    position: relative;
+    background-color: var(--dark-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    transform: translateY(10rem);
+}
+
+.cards-container .card:hover .face.face1{
+    background: var(--dark-beige);
+    transform: translateY(0);
+}
+
+.cards-container .card .face.face1 .content img{
+    max-width: 12rem;
+}
+
+.cards-container .card .face.face1 .content h3{
+    color: var(--white);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 0.2rem;
+    font-size: 1.5em;
+}
+
+.cards-container .card .face.face1 .content{
+    opacity: 0.2;
+    transition: 0.5s;
+}
+
+.cards-container .card:hover .face.face1 .content{
+    opacity: 1;
+}
+
+.cards-container .card .face.face2{
+    position: relative;
+    background: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.8);
+    transform: translateY(-10rem);
+    font-size: 1.5rem;
+}
+
+.cards-container .card:hover .face.face2{
+    transform: translateY(0);
+}
+
+/* Button in card */
+.cards-container .card .face.face2 .content a{
+    margin: 1.5rem 0 0;
+    display:  inline-block;
+    text-decoration: none;
+    font-weight: 900;
+    color: var(--light-gray);
+    padding: 5px;
+    border: 1px solid var(--light-gray);
+}
+
+.cards-container .card .face.face2 .content a:hover{
+    background:var(--light-gray);
+    color: var(--white);
+}
